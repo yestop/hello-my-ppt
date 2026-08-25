@@ -1,0 +1,37 @@
+version: v2
+title: 图表组件测试（官方 13 类型）
+size: [960, 540]
+theme:
+  colors:
+    primary: "#2563EB"
+    accent: "#F59E0B"
+    text: "#1F2937"
+    muted: "#6B7280"
+    bg: "#FFFFFF"
+  textStyles:
+    title:
+      fontSize: 22
+      color: "$primary"
+      bold: true
+pages:
+  - pages/01-bar.page
+  - pages/02-pie.page
+  - pages/03-line.page
+  - pages/04-area.page
+  - pages/05-scatter.page
+  - pages/06-bubble.page
+  - pages/07-candlestick.page
+  - pages/08-radar.page
+  - pages/09-waterfall.page
+  - pages/10-heatmap.page
+  - pages/11-treemap.page
+  - pages/12-sunburst.page
+  - pages/13-sankey.page
+  - pages/14-axis.page
+  - pages/15-hbar.page
+  - pages/16-secondary.page
+  - pages/17-chartex-color.page
+  - pages/18-more.page
+  - pages/19-levels.page
+  - pages/20-props.page
+  - pages/21-props2.page

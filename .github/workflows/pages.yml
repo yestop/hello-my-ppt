@@ -1,0 +1,65 @@
+# ============================================================================
+# GitHub Pages 部署流水线：测试 → 重建画廊索引 → 部署
+#   - push 到 main 自动触发；也可在 Actions 页手动触发（workflow_dispatch）
+#   - 仅当站点内容或被守门的代码变化时触发（paths 过滤）：
+#     README / docs / scripts 等与站点无关的小改动自动跳过，不跑测试不部署
+#   - 任何一步失败都不会部署（坏提交不会上线画廊）
+#   - 零依赖：项目无 npm install；测试为 Node 原生脚本
+# ============================================================================
+name: Deploy Pages
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "index.html"     # 站点入口
+      - "editor/**"      # 编辑器前端
+      - "examples/**"    # 画廊示例
+      - "assets/**"      # 站点资源（图标 / 字体 registry）
+      - "lib/**"         # 本地服务器（测试守门对象）
+      - "bin/**"
+      - "tests/**"
+      - "package.json"
+      - ".github/workflows/pages.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      # ① 生成公式中间产物（tests/formula/fixtures/mml/ 不入库，KaTeX 本地生成）
+      - name: 生成公式中间产物
+        run: npm run test:fixtures
+
+      # ② 回归测试：导出全部组件项目 + 包一致性 + 颜色 + 形状 + 公式 + 图标
+      - name: 回归测试
+        run: npm test
+
+      # ③ 重建静态画廊索引（examples/manifest.json），保证与 examples/ 一致
+      - name: 重建画廊索引
+        run: node bin/open-pptd.js gallery scan
+
+      # ④ 部署产物瘦身：站点只需 index.html + editor/ + assets/ + examples/
+      - name: 清理产物
+        run: rm -rf .git tests scripts docs references lib bin
+
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: .
+      - uses: actions/deploy-pages@v4

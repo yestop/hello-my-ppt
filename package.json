@@ -1,0 +1,23 @@
+{
+  "name": "hello-my-ppt",
+  "version": "1.2.0",
+  "type": "module",
+  "description": "Local PPTD editor, PPTX writer, and page-image renderer with no Kimi dependency",
+  "bin": {
+    "hello-my-ppt": "bin/hello-my-ppt.js",
+    "open-pptd": "bin/open-pptd.js"
+  },
+  "scripts": {
+    "test": "node tests/run-all.mjs",
+    "test:formula": "node tests/formula/test-formula.mjs",
+    "test:icon": "node tests/icon/test-icon.mjs",
+    "test:shapes": "node tests/preset-shapes.mjs",
+    "test:isolate": "node tests/isolate.mjs",
+    "test:live": "node tests/e2e/live-reload.mjs",
+    "test:incremental": "node tests/e2e/incremental-load.mjs",
+    "test:render": "node tests/render.mjs",
+    "test:fixtures": "node tests/formula/dump-formula-mml.mjs",
+    "pack": "node scripts/pack-release.mjs"
+  },
+  "license": "MIT"
+}

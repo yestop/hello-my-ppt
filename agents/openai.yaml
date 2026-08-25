@@ -1,0 +1,7 @@
+interface:
+  display_name: "hello-my-ppt"
+  short_description: "Local PPTD editor, PPTX writer, and PNG renderer"
+  default_prompt: "Use $hello-my-ppt to create or edit a local PPTD project, preview it in a browser, export an editable PPTX, and render page images without Kimi."
+
+policy:
+  allow_implicit_invocation: true

@@ -1,0 +1,67 @@
+# ============================================================================
+# Release 发布流水线：校验版本 → 回归测试 → 白名单打包 → 发布 Release
+#   - push v* 形如 v1.0.1 的 tag 自动触发（版本号必须与 package.json 一致）
+#   - 任何一步失败都不会发布（坏提交不会进 release）
+#   - 产物: open-pptd-v<version>.zip（顶层目录 open-pptd/，解压到 skills 文件夹即用）
+# ============================================================================
+name: Release
+
+on:
+  push:
+    tags: ["v*"]
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # 全量检出：读取带注释 tag 的注释内容作为 release notes
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      # ① 校验 tag 与 package.json version 一致（打 tag 前先 bump 版本）
+      - name: 校验版本一致
+        run: |
+          TAG="${GITHUB_REF_NAME#v}"
+          PKG=$(node -p "JSON.parse(require('fs').readFileSync('package.json','utf8')).version")
+          if [ "$TAG" != "$PKG" ]; then
+            echo "✗ tag v$TAG 与 package.json version $PKG 不一致"
+            exit 1
+          fi
+
+      # ② 生成公式中间产物（tests/formula/fixtures/mml/ 不入库，KaTeX 本地生成）
+      - name: 生成公式中间产物
+        run: npm run test:fixtures
+
+      # ③ 回归测试（与 Deploy Pages 同款守门）
+      - name: 回归测试
+        run: npm test
+
+      # ④ 按白名单打包 skill 运行时 → dist/open-pptd-v<version>.zip
+      - name: 打包
+        run: npm run pack
+
+      # ⑤ 创建 Release 并附上 zip；notes 优先取带注释 tag（-a）的注释内容（发版时手写的
+      #    更新说明），轻量 tag 未写注释则退回 commit 列表自动生成
+      - name: 发布 Release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          # actions/checkout@v4 检出 tag ref 时会把 annotated tag 覆盖为轻量 tag
+          # （testRef 用 rev-parse 拿到的 tag 对象 SHA 比对事件 commit SHA，annotated tag
+          #  永不相等 → 二次 fetch +<commit>:refs/tags/<tag> 降级）。此处从远程强制
+          # 重新拉回 annotated tag 对象，保证手写注释可用；轻量 tag 则仍退回自动生成。
+          git fetch --force origin "+refs/tags/${GITHUB_REF_NAME}:refs/tags/${GITHUB_REF_NAME}"
+          if [ "$(git tag -l --format='%(objecttype)' "$GITHUB_REF_NAME")" = "tag" ]; then
+            git tag -l --format='%(contents)' "$GITHUB_REF_NAME" > release-notes.md
+            # --title 必须显式指定：--notes-file 时 gh 会把 notes 第一行当标题
+            gh release create "$GITHUB_REF_NAME" dist/*.zip --notes-file release-notes.md --title "$GITHUB_REF_NAME"
+          else
+            gh release create "$GITHUB_REF_NAME" dist/*.zip --generate-notes --title "$GITHUB_REF_NAME"
+          fi

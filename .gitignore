@@ -1,0 +1,20 @@
+node_modules/
+dist/
+*.log
+.DS_Store
+tests/projects/*/out/
+# 字体嵌入测试项目生成的 pptx（generate.py 一键重建）
+tests/font-embed-test/deck.pptx
+# 公式测试的 KaTeX 中间产物（npm run test:fixtures 重新生成）
+tests/formula/fixtures/mml/
+
+# 内置字体库：字体文件本体不入库（155MB），registry.json 元数据必须入库
+assets/fonts/*
+!assets/fonts/registry.json
+
+# 本地工具运行痕迹（ZCode 会话目录）
+.zcode/
+
+# 本地 headless Chrome 临时 profile 与截图测试输出
+.render-profile*/
+_render*/
