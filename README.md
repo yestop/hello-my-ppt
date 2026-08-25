@@ -1,6 +1,6 @@
 # hello-my-ppt
 
-本地 PPTD → 可编辑 PPTX 技能。它把 PPTD 项目、浏览器编辑、PPTX 导出和页面图片渲染全部放在本地运行，不依赖 Kimi 登录、Kimi 下载接口或远程 PPTX 转换服务。
+本地 PPTD → 可编辑 PPTX 技能。它把 PPTD 项目、浏览器编辑、PPTX 导出和页面图片渲染全部放在本地运行。
 
 ## 能做什么
 
