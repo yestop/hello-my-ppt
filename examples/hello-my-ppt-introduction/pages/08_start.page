@@ -1,0 +1,53 @@
+pageType: content
+background: {type: solid, color: "$primary"}
+elements:
+  - elementId: accent
+    elementType: shape
+    bounds: [48, 54, 108, 5]
+    shapeName: rect
+    fill: {type: solid, color: "$accent2"}
+  - elementId: eyebrow
+    elementType: text
+    bounds: [48, 82, 500, 20]
+    content:
+      color: "$accent2"
+      fontSize: 11
+      bold: true
+      letterSpacing: 1.5
+      text: 07 · START HERE
+  - elementId: title
+    elementType: text
+    bounds: [48, 130, 700, 70]
+    content:
+      color: "#FFFFFF"
+      fontSize: 42
+      bold: true
+      text: 现在就开始设计你的 PPT
+  - elementId: copy
+    elementType: text
+    bounds: [48, 226, 590, 70]
+    content:
+      color: "#D7E6F4"
+      fontSize: 16
+      lineHeight: 1.55
+      text: 先给出主题和交付目标，再选择提示词、内置示例或外部视觉参考。hello-my-ppt 会把结果保留为可继续编辑的本地项目。
+  - elementId: command-panel
+    elementType: shape
+    bounds: [48, 344, 864, 74]
+    shapeName: rect
+    fill: {type: solid, color: "#0B2032"}
+  - elementId: command
+    elementType: text
+    bounds: [78, 369, 804, 24]
+    content:
+      fontFamily: "Consolas"
+      fontSize: 15
+      color: "#EAF2FF"
+      text: node bin/hello-my-ppt.js serve --project C:\\path\\to\\my-deck
+  - elementId: final
+    elementType: text
+    bounds: [48, 472, 864, 24]
+    content:
+      color: "#AFC8DC"
+      fontSize: 12
+      text: hello-my-ppt · local editor · editable PPTX · page images

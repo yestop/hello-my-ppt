@@ -11,6 +11,42 @@ A local PPTD-to-editable-PPTX skill. It provides a local browser editor, a local
 - Package the complete project as a ZIP
 - Support text, shapes, tables, 11 chart types, formulas, SVG/PNG/JPEG/GIF, icons, and optional font embedding
 
+## Design entry points
+
+hello-my-ppt supports three design entry points:
+
+1. **Prompt-driven design**: describe the topic, audience, page count, narrative, colors, fonts, template preference, and deliverables in Codex. Codex creates or edits the PPTD; the CLI handles local editing, export, and rendering.
+2. **Built-in examples**: copy a complete PPTD project from `examples/` and replace its content, pages, and media.
+3. **External PPTX as a visual reference**: rebuild the visual system in PPTD. hello-my-ppt does not directly import and preserve the original PPTX master structure.
+
+Example prompt:
+
+```text
+Use hello-my-ppt to design an 8-slide embodied-intelligence chip strategy deck
+for investors. Use a premium red-and-blue visual system and include market context,
+technical architecture, chip roadmap, competitive landscape, business model, and a close.
+Deliver the PPTD project, an editable PPTX, and page PNGs.
+```
+
+## Built-in example templates
+
+These are copyable PPTD projects, not screenshot-only templates:
+
+| Directory | Typical use |
+|---|---|
+| `business-review-7p` | Annual reviews and management reports |
+| `miaopai-saas-bp` | Business plans and fundraising decks |
+| `ev-range` | Academic defenses, models, and experiments |
+| `islelight-brand-book` | Brand books and visual guidelines |
+| `tech-architecture-review-7p` | Technical reviews and system architecture |
+| `shanmingji-2026-launch` | Product and brand launches |
+| `brand-mori-showcase-7p` | Brand proposals and creative showcases |
+| `hello-my-ppt-introduction` | hello-my-ppt usage example |
+
+Each example normally contains `deck.pptd`, `pages/`, `media/`, and optional `meta.yaml`. Copy the project first, then edit it in Codex or the browser editor.
+
+Full usage example: `examples/hello-my-ppt-introduction/deck.pptd`.
+
 ## Quick start
 
 Node.js 18+ is required. No `npm install` is needed.
@@ -61,6 +97,7 @@ For high-risk deliveries, open the PPTX in PowerPoint or WPS and inspect represe
 ## Limits
 
 - Existing PPTX files are not imported back into PPTD; rebuild them from reference material.
+- An external `.pptx` can guide visual reconstruction, but its Slide Master, master placeholders, and original layout structure are not directly preserved. Use `ppt-master` or `edit-powerpoint-live` when the original PPTX master must be filled directly.
 - Heatmap and Sankey are not exported as native PowerPoint charts.
 - Unknown icons are skipped. Prefer `bs:<name>` icons from `references/icons.md`, or use a local SVG/PNG image.
 - Original PPTX master structures are not preserved; recreate the visual system with PPTD theme tokens and native page elements.

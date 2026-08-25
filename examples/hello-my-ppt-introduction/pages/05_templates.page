@@ -1,0 +1,80 @@
+pageType: content
+background: {type: solid, color: "$bg"}
+elements:
+  - elementId: eyebrow
+    elementType: text
+    bounds: [48, 36, 500, 20]
+    content:
+      style: "$eyebrow"
+      text: 04 · BUILT-IN EXAMPLES
+  - elementId: title
+    elementType: text
+    bounds: [48, 68, 800, 44]
+    content:
+      style: "$title"
+      text: 内置示例就是可复制的 PPTD 起点
+  - elementId: subtitle
+    elementType: text
+    bounds: [48, 116, 840, 24]
+    content:
+      style: "$subtitle"
+      text: 每个目录都包含 deck.pptd、pages/ 和必要的 media/，可以复制后替换内容。
+  - elementId: left-panel
+    elementType: shape
+    bounds: [48, 168, 414, 286]
+    shapeName: rect
+    fill: {type: solid, color: "$primary"}
+  - elementId: right-panel
+    elementType: shape
+    bounds: [486, 168, 426, 286]
+    shapeName: rect
+    fill: {type: solid, color: "$surface"}
+    border: {style: solid, width: 1, color: "$line"}
+  - elementId: left-label
+    elementType: text
+    bounds: [76, 198, 300, 24]
+    content:
+      color: "$accent2"
+      fontSize: 11
+      bold: true
+      letterSpacing: 1.2
+      text: BUSINESS / BRAND / ACADEMIC
+  - elementId: left-list
+    elementType: text
+    bounds: [76, 242, 350, 170]
+    content:
+      color: "#FFFFFF"
+      fontSize: 16
+      lineHeight: 1.75
+      text: |
+        <p>01  business-review-7p</p>
+        <p>02  miaopai-saas-bp</p>
+        <p>03  ev-range</p>
+        <p>04  islelight-brand-book</p>
+  - elementId: right-label
+    elementType: text
+    bounds: [514, 198, 330, 24]
+    content:
+      color: "$accent"
+      fontSize: 11
+      bold: true
+      letterSpacing: 1.2
+      text: TECH / LAUNCH / SHOWCASE
+  - elementId: right-list
+    elementType: text
+    bounds: [514, 242, 350, 170]
+    content:
+      color: "$text"
+      fontSize: 16
+      lineHeight: 1.75
+      text: |
+        <p>05  tech-architecture-review-7p</p>
+        <p>06  shanmingji-2026-launch</p>
+        <p>07  brand-mori-showcase-7p</p>
+        <p>08  hello-my-ppt-introduction</p>
+  - elementId: footer
+    elementType: text
+    bounds: [48, 478, 864, 24]
+    content:
+      style: "$small"
+      text: 使用方式：复制 examples/ 下的项目 → 修改页面和素材 → serve 预览 → export 导出。

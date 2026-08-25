@@ -1,0 +1,113 @@
+pageType: content
+background: {type: solid, color: "$bg"}
+elements:
+  - elementId: eyebrow
+    elementType: text
+    bounds: [48, 36, 500, 20]
+    content:
+      style: "$eyebrow"
+      text: 02 · DESIGN INPUTS
+  - elementId: title
+    elementType: text
+    bounds: [48, 68, 800, 44]
+    content:
+      style: "$title"
+      text: 三种设计入口，适配不同起点
+  - elementId: subtitle
+    elementType: text
+    bounds: [48, 116, 800, 24]
+    content:
+      style: "$subtitle"
+      text: 可以从一句话开始，也可以从现有项目或视觉参考开始。
+  - elementId: c1
+    elementType: shape
+    bounds: [48, 174, 264, 246]
+    shapeName: rect
+    fill: {type: solid, color: "$accentSoft"}
+    border: {style: solid, width: 1, color: "#BFD8F8"}
+  - elementId: c2
+    elementType: shape
+    bounds: [348, 174, 264, 246]
+    shapeName: rect
+    fill: {type: solid, color: "#E8F6F2"}
+    border: {style: solid, width: 1, color: "#BCE3D8"}
+  - elementId: c3
+    elementType: shape
+    bounds: [648, 174, 264, 246]
+    shapeName: rect
+    fill: {type: solid, color: "#FFF0EA"}
+    border: {style: solid, width: 1, color: "#F7C7B6"}
+  - elementId: c1-tag
+    elementType: text
+    bounds: [72, 202, 90, 22]
+    content:
+      style: "$eyebrow"
+      text: PROMPT
+  - elementId: c1-title
+    elementType: text
+    bounds: [72, 238, 210, 34]
+    content:
+      fontSize: 22
+      bold: true
+      color: "$text"
+      text: 按提示词设计
+  - elementId: c1-body
+    elementType: text
+    bounds: [72, 292, 200, 90]
+    content:
+      style: "$body"
+      text: 说明主题、受众、页数、叙事、色板、字体和交付格式，由 Codex 生成 PPTD。
+  - elementId: c2-tag
+    elementType: text
+    bounds: [372, 202, 120, 22]
+    content:
+      style: "$eyebrow"
+      color: "$green"
+      text: PPTD TEMPLATE
+  - elementId: c2-title
+    elementType: text
+    bounds: [372, 238, 210, 34]
+    content:
+      fontSize: 22
+      bold: true
+      color: "$text"
+      text: 按内置示例设计
+  - elementId: c2-body
+    elementType: text
+    bounds: [372, 292, 200, 90]
+    content:
+      style: "$body"
+      text: 复制 examples/ 中的项目作为起点，替换内容、主题、页面和素材。
+  - elementId: c3-tag
+    elementType: text
+    bounds: [672, 202, 150, 22]
+    content:
+      style: "$eyebrow"
+      color: "$accent2"
+      text: REFERENCE
+  - elementId: c3-title
+    elementType: text
+    bounds: [672, 238, 210, 34]
+    content:
+      fontSize: 22
+      bold: true
+      color: "$text"
+      text: 按外部模板参考
+  - elementId: c3-body
+    elementType: text
+    bounds: [672, 292, 200, 90]
+    content:
+      style: "$body"
+      text: 外部 PPTX 可作为视觉参考重建；原始 PPTX 母版不会被直接保留。
+  - elementId: note
+    elementType: shape
+    bounds: [48, 454, 864, 42]
+    shapeName: rect
+    fill: {type: solid, color: "$primary"}
+  - elementId: note-text
+    elementType: text
+    bounds: [72, 466, 816, 18]
+    content:
+      color: "#FFFFFF"
+      fontSize: 12
+      text: 如果必须直接填充原始 PPTX 母版，请优先使用 ppt-master 或 edit-powerpoint-live。

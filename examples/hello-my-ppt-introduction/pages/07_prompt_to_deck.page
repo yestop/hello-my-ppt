@@ -1,0 +1,96 @@
+pageType: content
+background: {type: solid, color: "$bg"}
+elements:
+  - elementId: eyebrow
+    elementType: text
+    bounds: [48, 36, 500, 20]
+    content:
+      style: "$eyebrow"
+      text: 06 · PROMPT TO DECK
+  - elementId: title
+    elementType: text
+    bounds: [48, 68, 820, 44]
+    content:
+      style: "$title"
+      text: 一条清晰提示词，换来一套可编辑项目
+  - elementId: prompt-panel
+    elementType: shape
+    bounds: [48, 164, 500, 294]
+    shapeName: rect
+    fill: {type: solid, color: "$primary"}
+  - elementId: prompt-label
+    elementType: text
+    bounds: [76, 194, 420, 22]
+    content:
+      color: "$accent2"
+      fontSize: 11
+      bold: true
+      letterSpacing: 1.2
+      text: EXAMPLE PROMPT
+  - elementId: prompt-copy
+    elementType: text
+    bounds: [76, 232, 426, 190]
+    content:
+      color: "#FFFFFF"
+      fontSize: 15
+      lineHeight: 1.55
+      text: |
+        <p>请设计一份 8 页的</p>
+        <p>具身智能芯片战略汇报 PPT，</p>
+        <p>面向投资人，采用高级红蓝配色。</p>
+        <p>包含行业背景、技术架构、</p>
+        <p>芯片路线、竞争格局、商业模式</p>
+        <p>和总结页，输出 PPTD、PPTX、PNG。</p>
+  - elementId: output-title
+    elementType: text
+    bounds: [600, 170, 280, 28]
+    content:
+      fontSize: 20
+      bold: true
+      color: "$text"
+      text: Codex 生成的交付物
+  - elementId: out1
+    elementType: shape
+    bounds: [600, 226, 280, 60]
+    shapeName: rect
+    fill: {type: solid, color: "$accentSoft"}
+  - elementId: out1-text
+    elementType: text
+    bounds: [622, 242, 236, 26]
+    content:
+      fontSize: 16
+      bold: true
+      color: "$accent"
+      text: 01  deck.pptd + pages/
+  - elementId: out2
+    elementType: shape
+    bounds: [600, 304, 280, 60]
+    shapeName: rect
+    fill: {type: solid, color: "#E8F6F2"}
+  - elementId: out2-text
+    elementType: text
+    bounds: [622, 320, 236, 26]
+    content:
+      fontSize: 16
+      bold: true
+      color: "$green"
+      text: 02  editable deck.pptx
+  - elementId: out3
+    elementType: shape
+    bounds: [600, 382, 280, 60]
+    shapeName: rect
+    fill: {type: solid, color: "#FFF0EA"}
+  - elementId: out3-text
+    elementType: text
+    bounds: [622, 398, 236, 26]
+    content:
+      fontSize: 16
+      bold: true
+      color: "$accent2"
+      text: 03  page images + ZIP
+  - elementId: footer
+    elementType: text
+    bounds: [48, 478, 864, 24]
+    content:
+      style: "$small"
+      text: 提示词越明确，页面结构、视觉系统和素材选择越稳定；生成后仍建议浏览器复核。

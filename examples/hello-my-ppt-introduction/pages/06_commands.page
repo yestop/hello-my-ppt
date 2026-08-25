@@ -1,0 +1,79 @@
+pageType: content
+background: {type: solid, color: "$bg"}
+elements:
+  - elementId: eyebrow
+    elementType: text
+    bounds: [48, 36, 500, 20]
+    content:
+      style: "$eyebrow"
+      text: 05 · COMMANDS
+  - elementId: title
+    elementType: text
+    bounds: [48, 68, 800, 44]
+    content:
+      style: "$title"
+      text: 四条命令完成本地工作流
+  - elementId: subtitle
+    elementType: text
+    bounds: [48, 116, 820, 24]
+    content:
+      style: "$subtitle"
+      text: CLI 不负责理解提示词；它负责启动编辑器、导出 PPTX、渲染 PNG 和打包项目。
+  - elementId: code-panel
+    elementType: shape
+    bounds: [48, 168, 548, 286]
+    shapeName: rect
+    fill: {type: solid, color: "$primary"}
+  - elementId: code-title
+    elementType: text
+    bounds: [76, 194, 480, 22]
+    content:
+      color: "$accent2"
+      fontSize: 11
+      bold: true
+      letterSpacing: 1.2
+      text: POWERSHELL
+  - elementId: code
+    elementType: text
+    bounds: [76, 234, 480, 188]
+    content:
+      style: "$code"
+      text: |
+        <p>$skill = "C:\\...\\hello-my-ppt"</p>
+        <p>$project = "C:\\...\\my-deck"</p>
+        <p>node "$skill\\bin\\hello-my-ppt.js" serve `</p>
+        <p>  --project $project</p>
+        <p>node "$skill\\bin\\hello-my-ppt.js" export `</p>
+        <p>  "$project\\deck.pptd" -o "$project\\deck.pptx"</p>
+        <p>node "$skill\\bin\\hello-my-ppt.js" render `</p>
+        <p>  "$project\\deck.pptd" -o "$project\\rendered"</p>
+  - elementId: right-card
+    elementType: shape
+    bounds: [624, 168, 288, 286]
+    shapeName: rect
+    fill: {type: solid, color: "$surface"}
+    border: {style: solid, width: 1, color: "$line"}
+  - elementId: r-title
+    elementType: text
+    bounds: [652, 198, 230, 28]
+    content:
+      fontSize: 20
+      bold: true
+      color: "$text"
+      text: 交付建议
+  - elementId: r-body
+    elementType: text
+    bounds: [652, 246, 220, 144]
+    content:
+      style: "$body"
+      text: |
+        <p><strong>serve</strong>：先在浏览器检查布局。</p>
+        <p><strong>export</strong>：生成可编辑 PPTX。</p>
+        <p><strong>render</strong>：生成 PNG 做视觉复核。</p>
+        <p><strong>export-project</strong>：打包 PPTD 和素材。</p>
+  - elementId: footer
+    elementType: text
+    bounds: [48, 478, 864, 24]
+    content:
+      style: "$small"
+      text: 导出后可运行 tests/package-integrity.mjs 检查包内引用和页数。

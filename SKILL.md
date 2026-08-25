@@ -46,6 +46,16 @@ The manifest and all referenced pages/media must stay inside the project directo
 
 This skill does not import an existing PPTX into editable PPTD. For a user-provided PPTX, inspect it as a reference and rebuild the target content in a PPTD project. Preserve user-provided images in `media/` and use generated images only when they improve the communication goal.
 
+## Design inputs and built-in examples
+
+There are three supported design modes:
+
+1. Prompt-driven design: ask Codex to create or edit PPTD from a topic, outline, document, audience, page count, visual system, or deliverable requirements. The CLI itself is a local editor/exporter; it does not interpret natural-language prompts.
+2. Built-in PPTD examples: copy a project from `examples/` and use it as a starting point. Available examples include `business-review-7p`, `miaopai-saas-bp`, `ev-range`, `islelight-brand-book`, `tech-architecture-review-7p`, `shanmingji-2026-launch`, `brand-mori-showcase-7p`, and `hello-my-ppt-introduction`.
+3. External PPTX reference: analyze the supplied PPTX and rebuild its visual system in PPTD. Do not claim that the source PPTX master, placeholders, or original master layout are preserved. Use `ppt-master` or `edit-powerpoint-live` when the user needs direct native-PPTX template filling.
+
+The repository contains a complete usage example at `examples/hello-my-ppt-introduction/`.
+
 ## Workflow
 
 ### 1. Understand and plan

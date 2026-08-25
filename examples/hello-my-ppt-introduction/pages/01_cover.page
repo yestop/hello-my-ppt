@@ -1,0 +1,115 @@
+pageType: cover
+background:
+  type: solid
+  color: "$bg"
+elements:
+  - elementId: cover-panel
+    elementType: shape
+    bounds: [610, 0, 350, 540]
+    shapeName: rect
+    fill: {type: solid, color: "$primary"}
+  - elementId: cover-accent
+    elementType: shape
+    bounds: [48, 48, 110, 5]
+    shapeName: rect
+    fill: {type: solid, color: "$accent2"}
+  - elementId: cover-eyebrow
+    elementType: text
+    bounds: [48, 74, 500, 24]
+    content:
+      style: "$eyebrow"
+      text: LOCAL PPTD WORKFLOW · EDITABLE OUTPUT
+  - elementId: cover-title
+    elementType: text
+    bounds: [48, 128, 520, 150]
+    content:
+      fontFamily: "Microsoft YaHei"
+      fontSize: 48
+      bold: true
+      color: "$text"
+      lineHeight: 1.08
+      text: |
+        <p>hello-my-ppt</p>
+        <p style="margin-top:14px; color:$accent; font-size:25px;">从 PPTD 到可编辑 PPTX</p>
+  - elementId: cover-copy
+    elementType: text
+    bounds: [48, 310, 500, 70]
+    content:
+      style: "$subtitle"
+      text: 本地浏览器编辑、PPTX 导出与页面渲染，适合把提示词、内容和模板整理成可交付的演示文稿。
+  - elementId: cover-chip1
+    elementType: shape
+    bounds: [48, 422, 145, 34]
+    shapeName: rect
+    fill: {type: solid, color: "$accentSoft"}
+  - elementId: cover-chip1-text
+    elementType: text
+    bounds: [48, 428, 145, 20]
+    content:
+      fontSize: 11
+      color: "$accent"
+      bold: true
+      align: [center, middle]
+      text: 浏览器编辑
+  - elementId: cover-chip2
+    elementType: shape
+    bounds: [204, 422, 145, 34]
+    shapeName: rect
+    fill: {type: solid, color: "#FFF0EA"}
+  - elementId: cover-chip2-text
+    elementType: text
+    bounds: [204, 428, 145, 20]
+    content:
+      fontSize: 11
+      color: "$accent2"
+      bold: true
+      align: [center, middle]
+      text: 可编辑 PPTX
+  - elementId: cover-chip3
+    elementType: shape
+    bounds: [360, 422, 145, 34]
+    shapeName: rect
+    fill: {type: solid, color: "#E8F6F2"}
+  - elementId: cover-chip3-text
+    elementType: text
+    bounds: [360, 428, 145, 20]
+    content:
+      fontSize: 11
+      color: "$green"
+      bold: true
+      align: [center, middle]
+      text: PNG 预览
+  - elementId: cover-mark
+    elementType: shape
+    bounds: [704, 90, 160, 160]
+    shapeName: ellipse
+    fill: {type: solid, color: "$accent"}
+  - elementId: cover-mark-inner
+    elementType: shape
+    bounds: [744, 130, 80, 80]
+    shapeName: ellipse
+    fill: {type: solid, color: "$primary"}
+  - elementId: cover-mark-text
+    elementType: text
+    bounds: [650, 282, 270, 70]
+    content:
+      color: "#FFFFFF"
+      fontSize: 23
+      bold: true
+      align: [center, middle]
+      text: PPTD / PPTX / PNG
+  - elementId: cover-side-copy
+    elementType: text
+    bounds: [650, 390, 260, 80]
+    content:
+      color: "#CFE0F1"
+      fontSize: 13
+      lineHeight: 1.55
+      align: [center, top]
+      text: 本地项目可保存、可复用、可继续编辑。
+  - elementId: cover-footer
+    elementType: text
+    bounds: [48, 506, 500, 18]
+    content:
+      style: "$small"
+      text: hello-my-ppt · 使用介绍示例 · v1.0

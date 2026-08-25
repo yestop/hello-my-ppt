@@ -123,6 +123,24 @@
         "MiSans"
       ],
       "deck": "examples/tech-architecture-review-7p/deck.pptd"
+    },
+    {
+      "id": "hello-my-ppt-introduction",
+      "title": "hello-my-ppt 使用介绍",
+      "description": "介绍提示词设计、本地 PPTD 编辑、可编辑 PPTX 导出、PNG 渲染、内置示例模板和命令行工作流",
+      "tags": [
+        "PPTD",
+        "可编辑 PPTX",
+        "浏览器编辑",
+        "本地渲染",
+        "模板"
+      ],
+      "pages": 8,
+      "fonts": [
+        "Microsoft YaHei",
+        "Consolas"
+      ],
+      "deck": "examples/hello-my-ppt-introduction/deck.pptd"
     }
   ]
 }

@@ -1,0 +1,148 @@
+pageType: content
+background: {type: solid, color: "$bg"}
+elements:
+  - elementId: eyebrow
+    elementType: text
+    bounds: [48, 36, 500, 20]
+    content:
+      style: "$eyebrow"
+      text: 03 · CAPABILITIES
+  - elementId: title
+    elementType: text
+    bounds: [48, 68, 800, 44]
+    content:
+      style: "$title"
+      text: 从页面元素到交付物，保持可编辑
+  - elementId: subtitle
+    elementType: text
+    bounds: [48, 116, 820, 24]
+    content:
+      style: "$subtitle"
+      text: 设计时尽量使用原生 PPTD 元素，导出后可继续在 PowerPoint 或 WPS 中编辑。
+  - elementId: f1
+    elementType: shape
+    bounds: [48, 176, 262, 112]
+    shapeName: rect
+    fill: {type: solid, color: "$surface"}
+    border: {style: solid, width: 1, color: "$line"}
+  - elementId: f2
+    elementType: shape
+    bounds: [348, 176, 262, 112]
+    shapeName: rect
+    fill: {type: solid, color: "$surface"}
+    border: {style: solid, width: 1, color: "$line"}
+  - elementId: f3
+    elementType: shape
+    bounds: [648, 176, 264, 112]
+    shapeName: rect
+    fill: {type: solid, color: "$surface"}
+    border: {style: solid, width: 1, color: "$line"}
+  - elementId: f4
+    elementType: shape
+    bounds: [48, 314, 262, 112]
+    shapeName: rect
+    fill: {type: solid, color: "$surface"}
+    border: {style: solid, width: 1, color: "$line"}
+  - elementId: f5
+    elementType: shape
+    bounds: [348, 314, 262, 112]
+    shapeName: rect
+    fill: {type: solid, color: "$surface"}
+    border: {style: solid, width: 1, color: "$line"}
+  - elementId: f6
+    elementType: shape
+    bounds: [648, 314, 264, 112]
+    shapeName: rect
+    fill: {type: solid, color: "$primary"}
+  - elementId: f1-title
+    elementType: text
+    bounds: [72, 200, 210, 24]
+    content:
+      fontSize: 17
+      bold: true
+      color: "$accent"
+      text: 文本与排版
+  - elementId: f1-body
+    elementType: text
+    bounds: [72, 236, 210, 34]
+    content:
+      style: "$small"
+      text: 富文本、字体、层级、公式和演讲备注空间。
+  - elementId: f2-title
+    elementType: text
+    bounds: [372, 200, 210, 24]
+    content:
+      fontSize: 17
+      bold: true
+      color: "$green"
+      text: 图形与图表
+  - elementId: f2-body
+    elementType: text
+    bounds: [372, 236, 210, 34]
+    content:
+      style: "$small"
+      text: 形状、连线、表格、柱线饼图和技术图示。
+  - elementId: f3-title
+    elementType: text
+    bounds: [672, 200, 210, 24]
+    content:
+      fontSize: 17
+      bold: true
+      color: "$purple"
+      text: 媒体与图标
+  - elementId: f3-body
+    elementType: text
+    bounds: [672, 236, 210, 34]
+    content:
+      style: "$small"
+      text: SVG、PNG、JPEG、GIF、本地图标和可选字体嵌入。
+  - elementId: f4-title
+    elementType: text
+    bounds: [72, 338, 210, 24]
+    content:
+      fontSize: 17
+      bold: true
+      color: "$accent2"
+      text: 本地浏览器
+  - elementId: f4-body
+    elementType: text
+    bounds: [72, 374, 210, 34]
+    content:
+      style: "$small"
+      text: 预览、编辑、保存、实时刷新和本地文件授权。
+  - elementId: f5-title
+    elementType: text
+    bounds: [372, 338, 210, 24]
+    content:
+      fontSize: 17
+      bold: true
+      color: "$accent"
+      text: 交付与校验
+  - elementId: f5-body
+    elementType: text
+    bounds: [372, 374, 210, 34]
+    content:
+      style: "$small"
+      text: PPTX、PNG、项目 ZIP、包完整性和页数检查。
+  - elementId: f6-title
+    elementType: text
+    bounds: [672, 338, 210, 24]
+    content:
+      fontSize: 17
+      bold: true
+      color: "#FFFFFF"
+      text: 仍需注意
+  - elementId: f6-body
+    elementType: text
+    bounds: [672, 374, 210, 34]
+    content:
+      color: "#D7E6F4"
+      fontSize: 11
+      lineHeight: 1.45
+      text: 不直接导入 PPTX；heatmap / Sankey 不导出为原生图表。
+  - elementId: footer
+    elementType: text
+    bounds: [48, 474, 864, 24]
+    content:
+      style: "$small"
+      text: 支持的具体元素以 references/pptd.md 和 references/icons.md 为准。

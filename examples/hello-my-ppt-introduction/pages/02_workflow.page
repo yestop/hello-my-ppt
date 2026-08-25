@@ -1,0 +1,166 @@
+pageType: content
+background: {type: solid, color: "$bg"}
+elements:
+  - elementId: eyebrow
+    elementType: text
+    bounds: [48, 36, 500, 20]
+    content:
+      style: "$eyebrow"
+      text: 01 · WORKFLOW
+  - elementId: title
+    elementType: text
+    bounds: [48, 68, 760, 44]
+    content:
+      style: "$title"
+      text: 一条本地链路，覆盖设计到交付
+  - elementId: subtitle
+    elementType: text
+    bounds: [48, 116, 760, 24]
+    content:
+      style: "$subtitle"
+      text: 输入内容、提示词或 PPTD 模板，最后得到可编辑 PPTX 和页面图片。
+  - elementId: rule
+    elementType: shape
+    bounds: [48, 150, 864, 1]
+    shapeName: rect
+    fill: {type: solid, color: "$line"}
+  - elementId: card1
+    elementType: shape
+    bounds: [48, 194, 180, 214]
+    shapeName: rect
+    fill: {type: solid, color: "$surface"}
+    border: {style: solid, width: 1, color: "$line"}
+  - elementId: card2
+    elementType: shape
+    bounds: [272, 194, 180, 214]
+    shapeName: rect
+    fill: {type: solid, color: "$surface"}
+    border: {style: solid, width: 1, color: "$line"}
+  - elementId: card3
+    elementType: shape
+    bounds: [496, 194, 180, 214]
+    shapeName: rect
+    fill: {type: solid, color: "$surface"}
+    border: {style: solid, width: 1, color: "$line" }
+  - elementId: card4
+    elementType: shape
+    bounds: [720, 194, 192, 214]
+    shapeName: rect
+    fill: {type: solid, color: "$primary"}
+  - elementId: arrow1
+    elementType: line
+    bounds: [232, 292, 28, 12]
+    viewBox: [28, 12]
+    points: "0,6 28,6"
+    arrow: [null, arrow]
+    border: {style: solid, width: 2, color: "$accent"}
+  - elementId: arrow2
+    elementType: line
+    bounds: [456, 292, 28, 12]
+    viewBox: [28, 12]
+    points: "0,6 28,6"
+    arrow: [null, arrow]
+    border: {style: solid, width: 2, color: "$accent"}
+  - elementId: arrow3
+    elementType: line
+    bounds: [680, 292, 28, 12]
+    viewBox: [28, 12]
+    points: "0,6 28,6"
+    arrow: [null, arrow]
+    border: {style: solid, width: 2, color: "$accent"}
+  - elementId: n1
+    elementType: text
+    bounds: [70, 220, 50, 42]
+    content:
+      fontSize: 28
+      bold: true
+      color: "$accent"
+      text: 01
+  - elementId: n2
+    elementType: text
+    bounds: [294, 220, 50, 42]
+    content:
+      fontSize: 28
+      bold: true
+      color: "$accent"
+      text: 02
+  - elementId: n3
+    elementType: text
+    bounds: [518, 220, 50, 42]
+    content:
+      fontSize: 28
+      bold: true
+      color: "$accent"
+      text: 03
+  - elementId: n4
+    elementType: text
+    bounds: [742, 220, 50, 42]
+    content:
+      fontSize: 28
+      bold: true
+      color: "$accent2"
+      text: 04
+  - elementId: t1
+    elementType: text
+    bounds: [70, 280, 136, 28]
+    content:
+      fontSize: 18
+      bold: true
+      color: "$text"
+      text: 输入需求
+  - elementId: d1
+    elementType: text
+    bounds: [70, 322, 136, 58]
+    content:
+      style: "$small"
+      text: 提示词、文档、内容大纲或已有 PPTD 项目。
+  - elementId: t2
+    elementType: text
+    bounds: [294, 280, 136, 28]
+    content:
+      fontSize: 18
+      bold: true
+      color: "$text"
+      text: 生成 PPTD
+  - elementId: d2
+    elementType: text
+    bounds: [294, 322, 136, 58]
+    content:
+      style: "$small"
+      text: 页面、主题、元素和媒体保持项目内可追踪。
+  - elementId: t3
+    elementType: text
+    bounds: [518, 280, 136, 28]
+    content:
+      fontSize: 18
+      bold: true
+      color: "$text"
+      text: 浏览器编辑
+  - elementId: d3
+    elementType: text
+    bounds: [518, 322, 136, 58]
+    content:
+      style: "$small"
+      text: 本地预览、修改、保存和实时刷新。
+  - elementId: t4
+    elementType: text
+    bounds: [742, 280, 145, 28]
+    content:
+      fontSize: 18
+      bold: true
+      color: "#FFFFFF"
+      text: 导出交付
+  - elementId: d4
+    elementType: text
+    bounds: [742, 322, 145, 58]
+    content:
+      color: "#D7E6F4"
+      fontSize: 12
+      lineHeight: 1.5
+      text: PPTX、PNG 和完整项目 ZIP。
+  - elementId: footer
+    elementType: text
+    bounds: [48, 476, 864, 30]
+    content:
+      style: "$small"
+      text: 关键原则：先保留 PPTD 项目，再导出 PPTX；页面内容和素材始终可回溯。
